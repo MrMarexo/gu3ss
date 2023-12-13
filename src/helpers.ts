@@ -24,16 +24,20 @@ export const generateRandomPoints = async () => {
     return [firstPoint, secondPoint];
   }
 
-  const coords = data.features[0].geometry.coordinates;
+  const coords: Array<Array<number>> = data.features[0].geometry.coordinates;
 
-  const newSecond: Array<number> = coords[Math.ceil(coords.length / 2)];
+  if (coords.length < 8) {
+    return [firstPoint, secondPoint];
+  }
+
+  const newSecond = coords[Math.ceil(coords.length - 5)];
   const newSecondPoint = new LngLat(newSecond[0], newSecond[1]);
 
   return [firstPoint, newSecondPoint];
 };
 
 export const getGamePoints = (distance: number, diff: number) => {
-  const rate = distance / 10;
+  const rate = distance / 14;
   let num = 0;
   for (let i = 1; i < 5; i++) {
     if (diff <= rate * i) {

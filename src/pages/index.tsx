@@ -154,7 +154,7 @@ export default function Home() {
     }
     setOverall((old) => ({
       ...old,
-      level: old.level++,
+      level: old.level + 1,
     }));
     generateCoords();
   };

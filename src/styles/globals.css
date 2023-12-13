@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  button {
+    text-shadow: 0.3px 0.3px 1px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+  }
+
+  button:hover {
+    text-decoration: underline;
+  }
+}
+
+@layer utilities {
+  .my_shadow {
+    box-shadow: 2px 4px 8px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 4px 8px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 4px 8px -1px rgba(0, 0, 0, 0.75);
+  }
+
+  .my_text_shadow {
+    text-shadow: 0.3px 0.3px 1px rgba(0, 0, 0, 0.6);
+  }
+
+  .my_header_shadow {
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.6);
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
